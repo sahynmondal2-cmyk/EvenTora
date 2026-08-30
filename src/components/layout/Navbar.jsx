@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Heart, Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../common/Button';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,12 +17,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Vendors', href: '#' },
-    { name: 'Venues', href: '#' },
-    { name: 'Inspiration', href: '#' },
-    { name: 'Packages', href: '#' },
-    { name: 'Offers', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Vendors', href: '/vendors' },
+    { name: 'Venues', href: '/venues' },
+    { name: 'Inspiration', href: '/inspiration' },
+    { name: 'Packages', href: '/packages' },
+    { name: 'Offers', href: '/offers' },
   ];
 
   return (
@@ -32,20 +34,20 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="text-2xl font-bold tracking-wider text-[#FFFFF0] flex items-center gap-2">
+          <Link to="/" className="text-2xl font-bold tracking-wider text-[#FFFFF0] flex items-center gap-2">
             EVENTORA <span className="text-[#D4AF37]">✨</span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-medium text-gray-300 transition-colors hover:text-[#D4AF37]"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -57,10 +59,10 @@ export default function Navbar() {
             <button className="text-gray-300 hover:text-[#D4AF37] transition-colors">
               <Heart className="h-5 w-5" />
             </button>
-            <Button variant="ghost" size="sm" className="hidden lg:inline-flex">
+            <Button variant="ghost" size="sm" className="hidden lg:inline-flex" onClick={() => navigate('/login')}>
               Login
             </Button>
-            <Button variant="primary" size="sm">
+            <Button variant="primary" size="sm" onClick={() => navigate('/plan')}>
               Start Planning
             </Button>
           </div>
@@ -80,20 +82,21 @@ export default function Navbar() {
         <div className="absolute top-full left-0 w-full bg-[#0A0A0A] border-b border-gray-800 md:hidden">
           <nav className="flex flex-col px-4 py-6 space-y-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-base font-medium text-gray-300 hover:text-[#D4AF37]"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <div className="h-px bg-gray-800 my-4" />
             <div className="flex flex-col gap-3">
-              <Button variant="outline" className="w-full justify-start">
+              <Button variant="outline" className="w-full justify-start" onClick={() => { navigate('/login'); setIsMobileMenuOpen(false); }}>
                 Login
               </Button>
-              <Button variant="primary" className="w-full justify-start">
+              <Button variant="primary" className="w-full justify-start" onClick={() => { navigate('/plan'); setIsMobileMenuOpen(false); }}>
                 Start Planning
               </Button>
             </div>

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
@@ -104,9 +104,9 @@ function App() {
                 <p className="text-muted max-w-md mb-8">
                   The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
                 </p>
-                <a href="/" className="px-6 py-3 bg-champagne text-background rounded-full font-medium hover:bg-opacity-90 transition-all">
+                <Link to="/" className="px-6 py-3 bg-champagne text-background rounded-full font-medium hover:bg-opacity-90 transition-all">
                   Return to Home
-                </a>
+                </Link>
               </div>
             } />
           </Routes>
