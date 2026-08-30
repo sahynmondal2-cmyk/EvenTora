@@ -22,7 +22,7 @@ const Inspiration = () => {
         <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
              {[...Array(12)].map((_, i) => (
                 <div key={i} className="break-inside-avoid relative group rounded-xl overflow-hidden bg-gray-200">
-                    <div className="w-full bg-gray-300" style={{ height: `${Math.floor(Math.random() * 200) + 150}px` }}></div>
+                    <img src={`https://picsum.photos/seed/insplist${i}/600/800`} alt="Inspiration" className="w-full object-cover" style={{ height: `${Math.floor(Math.random() * 200) + 150}px` }} />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition flex items-end p-4 opacity-0 group-hover:opacity-100">
                         <span className="text-white font-medium">View Idea</span>
                     </div>

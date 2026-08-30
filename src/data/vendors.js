@@ -25,7 +25,7 @@ export const vendors = Array.from({ length: 30 }, (_, i) => {
     id: `v${i + 1}`,
     name,
     category,
-    image: `https://images.unsplash.com/photo-${1519741497674 + i * 15}-611481863552?auto=format&fit=crop&q=80&w=800`,
+    image: `https://picsum.photos/seed/vendor${i}/800/600`,
     location: locations[i % locations.length],
     rating: (4.0 + (i % 10) * 0.1).toFixed(1),
     reviews: 50 + (i * 15),
@@ -34,9 +34,9 @@ export const vendors = Array.from({ length: 30 }, (_, i) => {
     availability: i % 5 !== 0,
     verified: i % 3 !== 0,
     gallery: [
-      `https://images.unsplash.com/photo-${1511285560929 + i * 5}-9b456dbcc?auto=format&fit=crop&q=80&w=800`,
-      `https://images.unsplash.com/photo-${1519225421980 + i * 5}-a31c19cca?auto=format&fit=crop&q=80&w=800`,
-      `https://images.unsplash.com/photo-${1465495976277 + i * 5}-438c82343?auto=format&fit=crop&q=80&w=800`
+      `https://picsum.photos/seed/vendor${i}a/800/600`,
+      `https://picsum.photos/seed/vendor${i}b/800/600`,
+      `https://picsum.photos/seed/vendor${i}c/800/600`
     ],
     about: `Premium ${category} services offering unparalleled quality and luxury for your special day. We pride ourselves on creating unforgettable experiences.`,
     services: [`Premium ${category}`, "Custom Packages", "Consultation", "Destination Weddings"],

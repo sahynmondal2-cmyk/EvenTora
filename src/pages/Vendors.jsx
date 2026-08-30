@@ -38,7 +38,7 @@ const Vendors = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                {[1,2,3,4,5,6].map(i => (
                   <div key={i} className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-md transition">
-                      <div className="h-48 bg-gray-300"></div>
+                      <img src={`https://picsum.photos/seed/vendorlist${i}/800/600`} alt={`Vendor ${i}`} className="h-48 w-full object-cover" />
                       <div className="p-4">
                           <div className="flex justify-between items-start mb-2">
                             <h3 className="font-semibold text-lg text-gray-900">Vendor {i}</h3>

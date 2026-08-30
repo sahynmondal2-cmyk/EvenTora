@@ -3,13 +3,14 @@ import { Users, MapPin, Star } from 'lucide-react';
 import Badge from './Badge';
 
 export default function VenueCard({ venue }) {
-  const { name, image, rating, capacity, location, price, type } = venue;
+  const { name, image, images, rating, capacity, location, price, type } = venue;
+  const imageUrl = image || (images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/placeholder/800/600');
 
   return (
     <div className="group overflow-hidden rounded-md border border-gray-800 bg-[#0A0A0A] transition-all hover:border-[#D4AF37]/50">
       <div className="relative h-56 w-full overflow-hidden">
         <img
-          src={image || '/placeholder.jpg'}
+          src={imageUrl}
           alt={name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

@@ -9,7 +9,7 @@ export default function VendorCard({ vendor }) {
     <div className="group overflow-hidden rounded-md border border-gray-800 bg-[#0A0A0A] transition-all hover:border-[#D4AF37]/50 hover:shadow-[0_0_15px_rgba(212,175,55,0.1)]">
       <div className="relative h-48 w-full overflow-hidden">
         <img
-          src={image || '/placeholder.jpg'}
+          src={image || 'https://picsum.photos/seed/placeholder/800/600'}
           alt={name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

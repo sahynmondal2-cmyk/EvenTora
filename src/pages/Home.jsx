@@ -56,7 +56,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 {[1,2,3,4].map(i => (
                     <div key={i} className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                        <div className="h-48 bg-gray-300"></div>
+                        <img src={`https://picsum.photos/seed/homevendor${i}/800/600`} alt="Vendor" className="h-48 w-full object-cover" />
                         <div className="p-4">
                             <h3 className="font-semibold text-lg text-gray-900">Vendor Name</h3>
                             <p className="text-gray-500 text-sm">Photography</p>
@@ -73,7 +73,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              {[1,2,3].map(i => (
                 <div key={i} className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <div className="h-56 bg-gray-300"></div>
+                    <img src={`https://picsum.photos/seed/homevenue${i}/800/600`} alt="Venue" className="h-56 w-full object-cover" />
                     <div className="p-6">
                         <h3 className="font-bold text-xl text-gray-900 mb-2">Venue Name</h3>
                         <p className="text-gray-500 text-sm">New York, NY</p>

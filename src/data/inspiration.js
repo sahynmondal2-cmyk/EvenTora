@@ -8,7 +8,7 @@ export const inspiration = Array.from({ length: 40 }, (_, i) => {
   return {
     id: `ins${i + 1}`,
     title,
-    image: `https://images.unsplash.com/photo-${1511285560929 + i * 50}-9b456dbcc?auto=format&fit=crop&q=80&w=600`,
+    image: `https://picsum.photos/seed/insp${i}/600/800`,
     category
   };
 });
